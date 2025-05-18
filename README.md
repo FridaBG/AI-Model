@@ -1,43 +1,58 @@
 # Clasificador de Imágenes
+	
+&nbsp;
 
 ## 🖼️ Generación del set de datos
 
-### Obtener set de datos
+### 1. Obtener set de datos
 
-El conjunto de datos utilizado fue tomado de Kaggle:
+El conjunto de datos utilizado fue tomado de Kaggle: 🔗 [_Sports Balls – Multiclass Image Classification_](https://www.kaggle.com/datasets/samuelcortinhas/sports-balls-multiclass-image-classification/data)
 
-🔗 [_Sports Balls – Multiclass Image Classification_](https://www.kaggle.com/datasets/samuelcortinhas/sports-balls-multiclass-image-classification/data)
-
-Aunque el dataset original incluye una variedad más amplia de clases, se seleccionaron únicamente **5 categorías** con el objetivo de reducir el tiempo de entrenamiento y enfocarse en un problema de clasificación multiclase más acotado:
+Aunque el dataset original incluye una variedad más amplia de clases, se seleccionaron únicamente **5 categorías** con el objetivo de reducir el tiempo de entrenamiento, se seleccionaron las siguientes clases:
 
 - 🏈 Fútbol Americano
 - 🎳 Boliche
 - 🏏 Cricket
 - ⚽ Fútbol Soccer
 - 🎾 Tenis
+  
+Se agregaron imágenes extra a la clase Futbol Americano y Boliche para asegurar un buen balance entre las clases.
 
-Estas clases fueron elegidas por su **diversidad visual** y porque presentan un buen desafío para modelos de clasificación sin ser demasiado complejas.
+> **¿Está balanceado?** Sí, hay la misma cantidad de imágenes por clase (600 cada una)
 
-### Set de entrenamiento y pruebas
+> **¿Es correcto?** Sí, las imágenes están correctamente etiquetadas y clasificadas.
 
-Train
-Test
-Validation
+> **¿Es representativo?** Sí, incluye variedad suficiente de imágenes para cada clase.
 
-## 🔨 Preprocesado de los datos
+### 2. División del det de datos
+  <img src="https://velog.velcdn.com/images/iguv/post/8ae842e3-f2b6-44c5-b7bf-a1f74b3a9124/image.png" width="300"/>
+  
+  Para entrenar un modelo que realmente aprenda a clasificar y no solo memorice, es importante dividir el dataset en tres partes:
 
-### Escalamiento y Preprocesado de datos
+- **Training**
+  - *500 imágenes por clase (80%)*
+  - Aquí es donde el modelo “aprende” haciendo los ajustes internos necesarios para reducir el error.
+  - Entrena directamente el modelo
+- **Validation**
+  - *50 imágenes por clase (10%)*
+  - Se usa mientras el modelo entrena, pero no se le muestra nunca para aprender.
+Ayuda a medir si el modelo está empezando a "overfitting" y permite ajustar o detener el entrenamiento en el mejor momento.
+  - Sirve para monitorear el rendimiento sin hacer trampa.
+- **Testing**
+  - *50 imágenes por clase (10%)*
+  - Se guarda hasta el final. Es un grupo de datos nunca visto por el modelo ni durante el entrenamiento ni durante la validación.
+  - Sirve para saber qué tan bien clasifica el modelo a datos nuevos.
+	
 
-_ESCALAMIETO:_
-`rescale=1./255`
-Convierte los valores de píxeles de [0, 255] a [0, 1], esto:
+## ⚙️ Preprocesado de los datos
 
+### 1. Técnicas de escalamiento
+- `rescale=1./255`: Convierte los valores de píxeles de [0, 255] a [0, 1]
 - Acelera el entrenamiento
 - Mejora la estabilidad del modelo
 
-_PROCESADO DE DATOS:_
-Técnicas de preprocesamiento o aumento de datos para mejorar la generalización del modelo:
-
+### 2. Preprocesado de los datos
+Técnicas de preprocesamiento de datos para mejorar la categorización del modelo:
 - `rotation_range=30`: gira aleatoriamente la imagen
 - `width_shift_range=0.2`: desplaza horizontalmente
 - `height_shift_range=0.2`: desplaza verticalmente
@@ -46,4 +61,4 @@ Técnicas de preprocesamiento o aumento de datos para mejorar la generalización
 - `brightness_range=[0.8, 1.2]`: cambia el brillo
 - `fill_mode='nearest'`: rellena los huecos generados por estas transformaciones
 
-[Documentación Tensorflow](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator)
+🔗 [Documentación Tensorflow](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator)
