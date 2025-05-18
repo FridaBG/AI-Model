@@ -10,13 +10,18 @@ El conjunto de datos utilizado fue tomado de Kaggle: 🔗 [_Sports Balls – Mul
 
 Aunque el dataset original incluye una variedad más amplia de clases, se seleccionaron únicamente **5 categorías** con el objetivo de reducir el tiempo de entrenamiento, se seleccionaron las siguientes clases:
 
-- 🏈 Fútbol Americano
+- 🏈 Football
 - 🎳 Boliche
 - 🏏 Cricket
-- ⚽ Fútbol Soccer
+- ⚽ Soccer
 - 🎾 Tenis
+<<<<<<< HEAD
 
 Se agregaron imágenes extra a la clase Futbol Americano y Boliche para asegurar un buen balance entre las clases.
+=======
+  
+Se agregaron imágenes extra a la clase Football y Boliche para asegurar un buen balance entre las clases.
+>>>>>>> 0a57849dfe659c545e3cf91a2050b60ad6758920
 
 > **¿Está balanceado?** Sí, hay la misma cantidad de imágenes por clase (600 cada una)
 
