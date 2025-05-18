@@ -1,5 +1,5 @@
 # Clasificador de Imágenes
-	
+
 &nbsp;
 
 ## 🖼️ Generación del set de datos
@@ -15,7 +15,7 @@ Aunque el dataset original incluye una variedad más amplia de clases, se selecc
 - 🏏 Cricket
 - ⚽ Fútbol Soccer
 - 🎾 Tenis
-  
+
 Se agregaron imágenes extra a la clase Futbol Americano y Boliche para asegurar un buen balance entre las clases.
 
 > **¿Está balanceado?** Sí, hay la misma cantidad de imágenes por clase (600 cada una)
@@ -25,34 +25,37 @@ Se agregaron imágenes extra a la clase Futbol Americano y Boliche para asegurar
 > **¿Es representativo?** Sí, incluye variedad suficiente de imágenes para cada clase.
 
 ### 2. División del det de datos
+
   <img src="https://velog.velcdn.com/images/iguv/post/8ae842e3-f2b6-44c5-b7bf-a1f74b3a9124/image.png" width="300"/>
   
   Para entrenar un modelo que realmente aprenda a clasificar y no solo memorice, es importante dividir el dataset en tres partes:
 
 - **Training**
-  - *500 imágenes por clase (80%)*
+  - _500 imágenes por clase (80%)_
   - Aquí es donde el modelo “aprende” haciendo los ajustes internos necesarios para reducir el error.
   - Entrena directamente el modelo
 - **Validation**
-  - *50 imágenes por clase (10%)*
+  - _50 imágenes por clase (10%)_
   - Se usa mientras el modelo entrena, pero no se le muestra nunca para aprender.
-Ayuda a medir si el modelo está empezando a "overfitting" y permite ajustar o detener el entrenamiento en el mejor momento.
+    Ayuda a medir si el modelo está empezando a "overfitting" y permite ajustar o detener el entrenamiento en el mejor momento.
   - Sirve para monitorear el rendimiento sin hacer trampa.
 - **Testing**
-  - *50 imágenes por clase (10%)*
+  - _50 imágenes por clase (10%)_
   - Se guarda hasta el final. Es un grupo de datos nunca visto por el modelo ni durante el entrenamiento ni durante la validación.
   - Sirve para saber qué tan bien clasifica el modelo a datos nuevos.
-	
 
 ## ⚙️ Preprocesado de los datos
 
 ### 1. Técnicas de escalamiento
+
 - `rescale=1./255`: Convierte los valores de píxeles de [0, 255] a [0, 1]
 - Acelera el entrenamiento
 - Mejora la estabilidad del modelo
 
 ### 2. Preprocesado de los datos
+
 Técnicas de preprocesamiento de datos para mejorar la categorización del modelo:
+
 - `rotation_range=30`: gira aleatoriamente la imagen
 - `width_shift_range=0.2`: desplaza horizontalmente
 - `height_shift_range=0.2`: desplaza verticalmente
