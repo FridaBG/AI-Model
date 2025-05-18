@@ -1,6 +1,6 @@
 # Clasificador de Imágenes
 
-## Generación del set de datos
+## 🖼️ Generación del set de datos
 
 ### Obtener set de datos
 
@@ -24,7 +24,7 @@ Train
 Test
 Validation
 
-## Preprocesado de los datos
+## 🔨 Preprocesado de los datos
 
 ### Escalamiento y Preprocesado de datos
 
