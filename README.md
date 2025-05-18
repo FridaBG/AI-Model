@@ -64,4 +64,7 @@ Técnicas de preprocesamiento de datos para mejorar la categorización del model
 - `brightness_range=[0.8, 1.2]`: cambia el brillo
 - `fill_mode='nearest'`: rellena los huecos generados por estas transformaciones
 
+  <img src="https://i.postimg.cc/XYycfTm8/Captura-de-pantalla-2025-05-18-a-la-s-2-42-15-p-m.png" width="800"/>
+
+
 🔗 [Documentación Tensorflow](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator)
