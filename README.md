@@ -123,16 +123,14 @@ Esta función de pérdida mide la divergencia entre las distribuciones de probab
 
 ### 2. Reporte de resultados obtenidos e interpretación.
 
-El modelo alcanzó un accuracy final en el conjunto de prueba de 0.8107 (81%), como se muestra tanto en la métrica global como en las gráficas de desempeño. La curva de accuracy muestra una mejora constante en el entrenamiento, y aunque el data de validation es más inestable, ambas curvas están en valores altos, lo que indica que el modelo logra aprender sin caer en un overfitting grave.
+El modelo alcanzó un accuracy final en el conjunto de prueba de 0.832 (83.2%), como se muestra tanto en la métrica global como en las gráficas de desempeño. La curva de accuracy muestra una mejora constante en el entrenamiento, y también podemso observar com ola curva de loss disminuye con las epochs. El error estaba en que no se estaban rescaling las imagenes de validation ni de test.
 
-En contraste, la curva de loss se comporta de forma distinta. Esto es normal, ya que la función de pérdida (categorical_crossentropy) no siempre se realciona directamente con el accuracy, especialmente en clasificación multiclase. Además la **val loss** fluctúa porque el conjunto de validación es pequeño, y basta que falle una clase para subir el valor de loss.
+<img src="https://i.postimg.cc/SR90JJCm/Captura-de-pantalla-2025-05-26-a-la-s-10-14-16-p-m.png" width="400"/>
+<img src="https://i.postimg.cc/664xH1SF/Captura-de-pantalla-2025-05-26-a-la-s-10-14-37-p-m.png" width="400"/>
 
-<img src="https://i.postimg.cc/8cnpNtZj/Captura-de-pantalla-2025-05-26-a-la-s-1-11-38-p-m.png" width="400"/>
-<img src="https://i.postimg.cc/1tmsFLT8/Captura-de-pantalla-2025-05-26-a-la-s-1-12-04-p-m.png" width="400"/>
+La **matriz de confusión** muestra que el modelo logra un buen desempeño general, con las cuatro clases bien representadas. Tennis fue la clase mejor clasificada, con 63 de 70 ejemplos correctamente identificados. Football también presentó un alto desempeño, con 63 aciertos de 70. Soccer tuvo 53 clasificaciones correctas, aunque fue confundida principalmente con Football (10 casos). Se observa que Cricket fue confundida con football en 13 casos, lo que indica similitudes visuales entre estas clases. Aun así, el modelo mantiene un buen equilibrio de clasificación entre todas las clases.
 
-La **matriz de confusión** muestra que el modelo logra un buen desempeño general, con las cuatro clases bien representadas. Tennis fue la clase mejor clasificada, con 62 de 70 ejemplos correctamente identificados. Soccer también presentó un alto desempeño, con 59 aciertos de 70 Football tuvo 54 clasificaciones correctas, aunque fue confundida principalmente con cricket (7 casos) y soccer (7 casos). Sin embargo, se observa que cricket fue confundida con soccer en 8 casos y con tennis en 7, lo que indica similitudes visuales entre estas clases. Por otro lado, soccer presentó errores distribuidos entre las demás clases. Aun así, el modelo mantiene un buen equilibrio de clasificación entre todas las clases.
-
-<img src="https://i.postimg.cc/vB2FVDfK/Captura-de-pantalla-2025-05-26-a-la-s-1-12-34-p-m.png" width="400"/>
+<img src="https://i.postimg.cc/15phSVyH/Captura-de-pantalla-2025-05-26-a-la-s-10-15-11-p-m.png" width="400"/>
 
 ---
 
