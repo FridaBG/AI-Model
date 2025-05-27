@@ -15,7 +15,7 @@ Aunque el dataset original incluye una variedad más amplia de clases, se selecc
 - ⚽ Soccer
 - 🎾 Tenis
 
-Se agregaron imágenes extra a la clase Football y Boliche para asegurar un buen balance entre las clases.
+Se agregaron imágenes extra a todas las clases para asegurar un buen balance y tener un mejor rendimiento al aumentar el dataset.
 
 > **¿Está balanceado?** Sí, hay la misma cantidad de imágenes por clase (840 cada una)
 
@@ -36,7 +36,7 @@ Se agregaron imágenes extra a la clase Football y Boliche para asegurar un buen
 - **Validation**
   - _70 imágenes por clase (10%)_
   - Se usa mientras el modelo entrena, pero no se le muestra nunca para aprender.
-    Ayuda a medir si el modelo está empezando a "overfitting" y permite ajustar o detener el entrenamiento en el mejor momento.
+    Ayuda a medir si el modelo está empezando a "overfit" y permite ajustar o detener el entrenamiento en el mejor momento.
   - Sirve para monitorear el rendimiento sin hacer trampa.
 - **Testing**
   - _70 imágenes por clase (10%)_
@@ -79,7 +79,7 @@ Para esta implementación me basé en el modelo ICNN-BNDOA propuesto en el artí
 
 - Optimización con Adam, dada su eficiencia y adaptabilidad.
 
-> “This research created a seven-layer CNN model that includes an input layer with BN and DO layers, two hidden layers with BN and DO layers composed of convolution and pool layers, a flatten layer with DO layer (0.3), a fully connected layer, two dense layers with BN and DO layers, and an output layer with sigmoid activation.” (Al-Najjar et al., 2022, p. 390)
+> “This research created a seven-layer CNN model that includes an input layer with BN and DO layers, two hidden layers with BN and DO layers composed of convolution and pool layers, a flatten layer with DO layer (0.3), a fully connected layer, two dense layers with BN and DO layers, and an output layer with sigmoid activation.”
 
 Esta propuesta utiliza una red con múltiples capas convolucionales intercaladas con BN y DO, seguida de capas densas totalmente conectadas con activación ReLU y salida sigmoid para tareas binarias (en mi caso, adaptada a softmax para clasificación multiclase).
 
@@ -111,7 +111,7 @@ Esta configuración fue seleccionada tras pruebas comparativas, logrando mejorar
 
 Para evaluar el desempeño de mi modelo de clasificación multiclase, seleccioné la métrica **accuracy**. Esta elección está respaldada por el artículo **"A comprehensive survey of loss functions and metrics in deep learning"** , donde se destaca que:
 
-“Accuracy remains the most widely used metric for classification tasks, especially when the dataset is balanced and the misclassification costs are uniform across classes.”
+> “Accuracy remains the most widely used metric for classification tasks, especially when the dataset is balanced and the misclassification costs are uniform across classes.”
 
 Dado que mi conjunto de datos está equilibrado entre las cuatro clases y no existen penalizaciones diferenciadas por errores de clasificación, la métrica accuracy proporciona una evaluación clara y directa del rendimiento general del modelo.
 
