@@ -96,7 +96,7 @@ Inspirado en la estructura general del modelo ICNN-BNDOA, implementé una red CN
 La arquitectura final incluye:
 
 - 3 bloques Conv2D + MaxPooling2D, con activación ReLU.
-- Dropout(0.3) aplicado después de las dos últimas capas convolucionales.
+- Dropout(0.2) aplicado después de las dos últimas capas convolucionales.
 - 1 capa Flatten para vectorizar.
 - Dropout(0.3) adicional antes de la capa densa final.
 - 1 capa Dense(64) con activación ReLU.
