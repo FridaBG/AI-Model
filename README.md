@@ -1,4 +1,4 @@
-# Clasificador de Imágenes
+# Clasificador de Balones Deportivos
 
 &nbsp;
 

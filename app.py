@@ -31,7 +31,7 @@ demo = gr.Interface(
     fn=predict,
     inputs=gr.Image(type="pil"),
     outputs=gr.Label(num_top_classes=4),
-    title="Clasificador de Imágenes Deportivas",
+    title="Clasificador de Balones Deportivos",
     description="Sube una imagen de una pelota (tenis, soccer, cricket, football) y el modelo la clasificará automáticamente."
 )
 
