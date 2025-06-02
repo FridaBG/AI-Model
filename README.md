@@ -1,6 +1,5 @@
 # Clasificador de Balones Deportivos
-
-&nbsp;
+🔗 [PAPER COMPLETO - PDF](https://github.com/FridaBG/AI-Model/blob/main/Clasificaci%C3%B3n%20de%20Balones%20Deportivos%20Utilizando%20Redes%20Neuronales%20Convolucionales%20(CNN).pdf)
 
 ## 🖼️ Generación del set de datos
 
