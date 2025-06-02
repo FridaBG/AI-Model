@@ -1,4 +1,4 @@
-# Clasificador de Imágenes
+# Clasificador de Balones Deportivos
 
 &nbsp;
 
@@ -125,14 +125,13 @@ Esta función de pérdida mide la divergencia entre las distribuciones de probab
 
 El modelo alcanzó un accuracy final en el conjunto de prueba de 0.875 (87.5%), como se muestra tanto en la métrica global como en las gráficas de desempeño. La curva de accuracy muestra una mejora constante en el entrenamiento, y también podemso observar como la curva de loss disminuye con las epochs. El error estaba en que no se estaban rescaling las imagenes de validation ni de test.
 
-_falta actualizar imágenes_
-<img src="https://i.postimg.cc/SR90JJCm/Captura-de-pantalla-2025-05-26-a-la-s-10-14-16-p-m.png" width="400"/>
-<img src="https://i.postimg.cc/664xH1SF/Captura-de-pantalla-2025-05-26-a-la-s-10-14-37-p-m.png" width="400"/>
+<img src="https://i.postimg.cc/026Ndp4Q/Captura-de-pantalla-2025-06-01-a-la-s-6-29-36-p-m.png" width="400"/>
+<img src="https://i.postimg.cc/054kQzNq/Captura-de-pantalla-2025-06-01-a-la-s-6-29-59-p-m.png" width="400"/>
 
 _falta actualizar textoe imagen_
 La **matriz de confusión** muestra que el modelo logra un buen desempeño general, con las cuatro clases bien representadas. Tennis fue la clase mejor clasificada, con 63 de 70 ejemplos correctamente identificados. Football también presentó un alto desempeño, con 63 aciertos de 70. Soccer tuvo 53 clasificaciones correctas, aunque fue confundida principalmente con Football (10 casos). Se observa que Cricket fue confundida con football en 13 casos, lo que indica similitudes visuales entre estas clases. Aun así, el modelo mantiene un buen equilibrio de clasificación entre todas las clases.
 
-<img src="https://i.postimg.cc/15phSVyH/Captura-de-pantalla-2025-05-26-a-la-s-10-15-11-p-m.png" width="400"/>
+<img src="https://i.postimg.cc/Bbznf6j4/Captura-de-pantalla-2025-06-01-a-la-s-6-28-58-p-m.png" width="400"/>
 
 ---
 
